@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #333;
+    /* Dark background for better contrast */
+}
+
+#canvas-container {
+    margin: 20px auto;
+    border: 18px double #999; /* Blue double border */
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+
+
+
+#toolbar {
+    margin-bottom: 10px;
+    background-color: #444;
+    /* Dark background for the toolbar */
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    /* Use flexbox for alignment */
+    justify-content: center;
+    /* Center-align buttons horizontally */
+    gap: 10px;
+    /* Add space between buttons */
+    flex-wrap: wrap;
+    /* Allow buttons to wrap on small screens */
+}
+
+#toolbar button {
+    background: #555;
+    /* Button background */
+    border: none;
+    color: white;
+    /* Text color */
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition */
+}
+
+#toolbar button:hover {
+    background-color: #666;
+    /* Hover background color */
+    transform: scale(1.05);
+    /* Slightly enlarge button on hover */
+}
+
+#toolbar button:active {
+    background-color: #777;
+    /* Darker background color on click */
+}
+
+#toolbar i {
+    font-size: 1.2em;
+    /* Adjust icon size */
+}
+
+/* Additional styling for icons */
+#toolbar .fa-eraser {
+    color: white;
+    /* Eraser icon color */
+}
+
+#toolbar .fa-fill-drip {
+    color: white;
+    /* Color filler icon color */
+}
+
+#toolbar .fa-download {
+    color: white;
+    /* Download icon color */
+}
+
+#toolbar .fa-pen {
+    color: white;
+    /* Pen icon color */
+}
+
+#toolbar label[for="colorPicker"] {
+    background: #555;
+    /* Match button background color */
+    border: none;
+    color: white;
+    /* Match button text color */
+    font-size: 1.2em;
+    /* Adjust icon size */
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Make it clickable */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Smooth transition */
+}
+
+#toolbar label[for="colorPicker"]:hover {
+    background-color: #666;
+    /* Match button hover background color */
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+#toolbar label[for="colorPicker"]:active {
+    background-color: #777;
+    /* Match button background color on click */
+}
+
+/* Existing styles... */
+
+#shapesMenu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    /* Adjust as needed */
+    left: 0;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Ensure that the container for the shapes button and menu is positioned correctly */
+#shapes-container {
+    position: relative; /* To allow the menu to be positioned relative to this container */
+    display: inline-block; /* To fit the width of the button */
+}
+
+/* Styling for the shapes button */
+#shapesBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #555; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+}
+
+/* Initially hide the shapes menu */
+#shapesMenu {
+    display: none; /* Hide by default */
+    position: absolute; /* Position it relative to the container */
+    top: 100%; /* Place it below the button */
+    left: 0; /* Align it with the left edge of the button */
+    background-color: #444; /* Background color for the menu */
+    border: 1px solid #555; /* Border around the menu */
+    border-radius: 5px; /* Rounded corners for the menu */
+    padding: 10px; /* Padding inside the menu */
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+/* Menu item styles */
+#shapesMenu button {
+    display: block; /* Stack buttons vertically */
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: left;
+    cursor: pointer;
+}
+
+#shapesMenu button:hover {
+    background-color: #666; /* Highlight on hover */
+}
+
+#colorPaletteBtn {
+    background: #555;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#colorPaletteBtn:hover {
+    background-color: #666;
+    transform: scale(1.05);
+}
+
+#colorPaletteBtn:active {
+    background-color: #777;
+}
+@font-face {
+    font-family: "Hell0";
+    src: url("Virgil.woff2") format("woff2");
+    font-display: swap;
+}
+
+#logo {
+    text-align: center;
+    margin: 20px auto;
+}
+
+#logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 16px;
+    color: #666;
+}
