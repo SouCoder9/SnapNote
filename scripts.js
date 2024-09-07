@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tempCanvas.width = canvas.width;
         tempCanvas.height = canvas.height;
         const tempContext = tempCanvas.getContext('2d');
-        tempContext.fillStyle = 'white';
+        tempContext.fillStyle = '#333';
         tempContext.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
         const canvasDataURL = canvas.toDataURL();
         const img = new Image();
