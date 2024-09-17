@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedColor = '#000000';
     let fontSize = 20;
 
+    // Set canvas background color to match eraser color
+    canvas.setBackgroundColor('#333', canvas.renderAll.bind(canvas));
+
     // Handle color picker visibility
     colorPaletteBtn.addEventListener('click', () => {
         colorPicker.click();
@@ -145,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Eraser Function (Match eraser color to canvas background)
     function enableEraser() {
         if (canvas.isDrawingMode) {
             canvas.isDrawingMode = false;
@@ -152,14 +156,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const eraserBrush = new fabric.PencilBrush(canvas);
-        eraserBrush.color = '#333';
+        eraserBrush.color = '#333'; // Ensure eraser matches canvas background color
         eraserBrush.width = 20;
         canvas.freeDrawingBrush = eraserBrush;
-        canvas.isDrawingMode = true; 
+        canvas.isDrawingMode = true;
     }
 
     // Activate eraser on button click
     document.getElementById('eraserBtn').addEventListener('click', enableEraser);
+
     // Fill Color Button
     document.getElementById('fillColorBtn').addEventListener('click', () => {
         const activeObject = canvas.getActiveObject();
@@ -179,16 +184,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Delete All Button
     document.getElementById('deleteAllBtn').addEventListener('click', () => {
-        canvas.clear();
+        // Remove all objects from the canvas, but keep the background color
+        canvas.getObjects().forEach(obj => {
+            canvas.remove(obj);
+        });
+        canvas.renderAll(); // Re-render the canvas
     });
-
+    
     // Save Button
     document.getElementById('saveBtn').addEventListener('click', () => {
         const tempCanvas = document.createElement('canvas');
         tempCanvas.width = canvas.width;
         tempCanvas.height = canvas.height;
         const tempContext = tempCanvas.getContext('2d');
-        tempContext.fillStyle = '#333';
+        tempContext.fillStyle = '#333'; // Use same background color as the canvas
         tempContext.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
         const canvasDataURL = canvas.toDataURL();
         const img = new Image();
@@ -203,5 +212,4 @@ document.addEventListener('DOMContentLoaded', () => {
             link.click();
         };
     });
-
 });
