@@ -2,22 +2,22 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #333;
-    /* Dark background for better contrast */
+
 }
 
 #canvas-container {
     margin: 20px auto;
-    border: 18px double #999; /* Double border */
+    border: 18px double #999; 
     width: 100%;
-    max-width: 800px; /* Set a max width for larger screens */
+    max-width: 800px;
     height: auto;
     position: relative;
     overflow: hidden;
 }
 canvas {
-    width: 100%; /* Make the canvas responsive */
-    height: auto; /* Adjust height based on the width */
-    display: block; /* Ensure no unexpected margin or padding */
+    width: 100%; 
+    height: auto; 
+    display: block; 
 }
 
 #toolbar {
@@ -154,7 +154,7 @@ footer {
     color: #666;
 }
 
-/* Media Queries for Responsiveness */
+
 @media (max-width: 768px) {
     #canvas-container {
         width: 90%;
